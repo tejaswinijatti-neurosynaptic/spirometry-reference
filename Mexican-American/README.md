@@ -1,38 +1,56 @@
-# Latin American Spirometry Reference Calculator
+# Mexican American Spirometry Reference Calculator
 
-This repository contains Python functions and resources used to calculate reference spirometry values for Latin American populations based on weighted data from published studies.
+This folder contains Python code and documentation for calculating spirometry reference values specific to the **Mexican American** population. The reference equations are based on NHANES III and peer-reviewed literature focused on individuals of Mexican descent residing in the United States.
+
+---
 
 ## 📄 Overview
-- Reference equations based on studies from Brazil, Mexico, Chile, Uruguay, and Venezuela.
-- Predicts FEV1, FVC, FEV1/FVC%, PEFR, FEF25-75, FEF50, FEF75.
-- Includes LLN and ULN calculations where applicable.
+- **Parameters Covered**: FVC, FEV1, FEV1/FVC%, PEFR, TLC, FEF25–75, FEF50, FEF75
+- **Age Range**: 5 to 95 years
+- **Population**: Mexican Americans (based on NHANES III data)
+- **Regression Models**: Linear and quadratic models
+
+---
 
 ## 🚀 Getting Started
 
-1. Clone the Repository
-bash
-git clone https://github.com/yourusername/latin-spirometry.git
-cd latin-spirometry
+### 1. Requirements
+Install required Python libraries:
+```bash
+pip install -r ../requirements.txt
+```
 
-2. Install Dependencies
-pip install -r requirements.txt
+### 2. Sample Usage
+```python
+from spirometry_mexican import predict_fev1, predict_fvc
 
-4. Run a Sample Prediction
-from spirometry import predict_fev1, predict_fvc
-# Example input
 age = 45
 height = 170
 sex = "male"
-fev1_pred = predict_fev1(age, height, sex)
-fvc_pred = predict_fvc(age, height, sex)
-print("FEV1 Predicted:", fev1_pred)
 
- Files
-spirometry.py — Contains all the reference equations
-input.csv - example file for input for Latin American population
-README.md — Project documentation
+fev1 = predict_fev1(age, height, sex)
+fvc = predict_fvc(age, height, sex)
+print("FEV1:", fev1)
+print("FVC:", fvc)
+```
 
- Requirements
-Python 3.7+
-numpy
-pandas
+---
+
+## 📁 Files
+- `spirometry_mexican.py`: Contains prediction functions
+-  `input.csv`: Contains sample input values for the code
+- `README.md`: This guide
+- `whitepaper_mexican.pdf`: Full documentation on population, data sources, and methodology
+
+---
+
+## 📚 References
+1. Hankinson JL, et al. NHANES III spirometry reference values. [PubMed](https://www.ncbi.nlm.nih.gov/articles/PMC10351349/)
+2. Quanjer PH, et al. Total lung capacity in children. [AnnalsATS](https://www.atsjournals.org/doi/epdf/10.1513/AnnalsATS.201712-922OC?role=tab)
+3. Stocks J, et al. TLC for adults. [Acta Medica](https://sci-hub.se/10.1159/000209385)
+4. Perez-Padilla R, et al. FEF equations. [Arc Med](https://sci-hub.se/10.1016/j.arcmed.2004.06.010)
+
+---
+
+## 📝 License
+MIT License
