@@ -51,9 +51,9 @@ print("FVC (weighted):", fvc["pred"])
 
 ## 📁 Files
 
-* `combinedIndia_code.py` — Main prediction functions and regional model calls
+* `Indian_regions_combined.py` — Main prediction functions and regional model calls
 * `README.md` — This guide
-* `test_data.csv` — Sample input format for batch processing
+* `input_india.csv` — Input(average height and weight across India) for the python file
 
 ---
 
