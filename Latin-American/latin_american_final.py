@@ -67,7 +67,7 @@ def predict_male_fev1_fvc(age, height):
 # Standard deviation (SD) values for FEV1, FVC, FEV1/FVC
 SD_fev1_female = 0.21
 SD_fvc_female = 0.22
-SD_fev1_fvc_female = 0.058
+SD_fev1_fvc_female = 5.8
 
 def predict_female_fev1(age, height):
     ln_fev1 = (0.0575872 * height - 0.0001315 * height**2 + 0.0098811 * age - 0.0002149 * age**2 - 4.7751014)
